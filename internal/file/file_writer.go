@@ -1,13 +1,13 @@
 package file
 
 import (
-	"EthereumScanner/etherum"
+	"EthereumScanner/pkg/ethereum"
 	"fmt"
 	"os"
 	"strconv"
 )
 
-func WriteTransactionToTxt(addressMap map[string]int, transactionArr []etherum.Transaction, addressCounter *int) (map[string]int, error) {
+func WriteTransactionToTxt(addressMap map[string]int, transactionArr []ethereum.Transaction, addressCounter *int) (map[string]int, error) {
 	transactionFile, err := os.OpenFile("assets/transactions.txt",
 		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
